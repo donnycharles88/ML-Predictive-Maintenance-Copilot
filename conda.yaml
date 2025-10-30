@@ -1,0 +1,30 @@
+name: mlflow-predictive-maintenance
+channels:
+  - defaults
+  - conda-forge
+dependencies:
+  # Base Python
+  - python=3.9  # Pilih versi Python yang sesuai, misalnya 3.8, 3.9, atau 3.10
+
+  # Framework utama untuk MLflow
+  - pip
+
+  # Library yang diekstrak dari kode Anda
+  - pandas
+  - numpy
+  - scikit-learn  # Digunakan untuk train_test_split, metrics, StandardScaler
+  - xgboost       # Model utama
+  - matplotlib
+  - seaborn
+  - joblib
+  - requests
+
+  # Library spesifik MLflow (install via pip untuk dukungan terbaru)
+  - pip:
+    - mlflow>=2.0.0 # Pastikan versi MLflow yang cukup baru
+    - cloudpickle==2.2.1 # Dependencies umum untuk MLflow
+    - packaging==23.1
+    - typing-extensions==4.7.1
+    - psutil==5.9.5
+    # Jika Anda ingin memastikan kompatibilitas untuk 'mlflow.xgboost',
+    # mungkin perlu versi spesifik atau biarkan MLflow menanganinya.
