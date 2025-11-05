@@ -10,19 +10,20 @@ Install the required Python packages:
 ```bash
 pip install pandas numpy xgboost scikit-learn matplotlib seaborn joblib mlflow requests
 ```
-## 🚀 Running the Training Script
-```bash
-python predictive_maintenance.py
-```
----
 
-## 🔬 MLflow Tracking UI (Optional)
+## 🔬 MLflow Tracking UI 
 
 To view experiment details, run:
 
 ```bash
 mlflow ui
 ```
+
+## 🚀 Running the Training Script
+```bash
+python predictive_maintenance.py
+```
+---
 
 Then open in your browser:
 
