@@ -12,6 +12,8 @@ Install the required Python packages:
 ```bash
 pip install pandas numpy xgboost scikit-learn matplotlib seaborn joblib mlflow requests
 
+---
+
 ## 🚀 Running the Training Script
 
 Run the training script to:
