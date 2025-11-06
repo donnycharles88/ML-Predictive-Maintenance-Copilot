@@ -36,7 +36,7 @@ Then open in your browser:
 After the model is registered, serve it using MLflow:
 
 ```bash
-mlflow models serve -m "models:/Predictive_Maintenance_Model/1" -p 5001 --env-manager local
+mlflow models serve -m "models:/Predictive_Maintenance_Model_Pipeline/1" -p 5001 --env-manager local
 ```
 
 This will expose the prediction endpoint at:
@@ -45,6 +45,20 @@ This will expose the prediction endpoint at:
 http://127.0.0.1:5001/invocations
 ```
 
+Maka sekarang kamu bisa kirim payload seperti ini:
+
+```
+Invoke-RestMethod -Method Post -Uri http://127.0.0.1:5001/invocations -ContentType 'application/json' -Body '{"dataframe_split": {"columns": ["Air_temperature_K", "Process_temperature_K", "Rotational_speed_rpm", "Torque_Nm", "Tool_wear_min", "Type_Encoded", "Failure_Heat_Dissipation_Failure", "Failure_Overstrain_Failure", "Failure_Power_Failure", "Failure_Random_Failures", "Failure_Tool_Wear_Failure"], "data": [[300, 310, 1500, 25, 30, 1, 0, 0, 0, 0, 0]]}}'
+
+```
+
+dan hasilnya seharusnya jadi:
+```
+predictions
+-----------
+{0}
+
+```
 ---
 ## 🧪 Prediction Output
 
