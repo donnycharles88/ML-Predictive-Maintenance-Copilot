@@ -48,7 +48,7 @@ http://127.0.0.1:5001/invocations
 Maka sekarang kamu bisa kirim payload seperti ini:
 
 ```
-Invoke-RestMethod -Method Post -Uri http://127.0.0.1:5001/invocations -ContentType 'application/json' -Body '{"dataframe_split": {"columns": ["Air_temperature_K", "Process_temperature_K", "Rotational_speed_rpm", "Torque_Nm", "Tool_wear_min", "Type_Encoded"], "data": [[315.0, 308.8, 5500, 90.0, 10, 1]]}}'
+Invoke-RestMethod -Method Post -Uri http://127.0.0.1:5001/invocations -ContentType 'application/json' -Body '{"dataframe_split": {"columns": ["Air_temperature_K", "Process_temperature_K", "Rotational_speed_rpm", "Torque_Nm", "Tool_wear_min"], "data": [[308, 315, 1200, 75.0, 240]]}}'
 
 ```
 
@@ -59,16 +59,6 @@ predictions
 {1}
 
 ```
-Catatan Tambahan untuk Payload:
-
-Type_Encoded harus sesuai dengan pemetaan LabelEncoder 
-| Output | Meaning |
-|:------:|:---------|
-| `0` | High (**H**) |
-| `1` | Low (**L**) |
-| `2` | Medium (**M**) |
-
----
 ## 🧪 Prediction Output
 
 | Output | Meaning |
