@@ -21,7 +21,7 @@ mlflow ui
 
 ## 🚀 Running the Training Script
 ```bash
-python predictive_maintenance.py
+python predictive.py
 ```
 ---
 
@@ -48,7 +48,7 @@ http://127.0.0.1:5001/invocations
 Maka sekarang kamu bisa kirim payload seperti ini:
 
 ```
-Invoke-RestMethod -Method Post -Uri http://127.0.0.1:5001/invocations -ContentType 'application/json' -Body '{"dataframe_split": {"columns": ["Air_temperature_K", "Process_temperature_K", "Rotational_speed_rpm", "Torque_Nm", "Tool_wear_min", "Type_Encoded", "Failure_Heat_Dissipation_Failure", "Failure_Overstrain_Failure", "Failure_Power_Failure", "Failure_Random_Failures", "Failure_Tool_Wear_Failure"], "data": [[300, 310, 1500, 25, 30, 1, 0, 0, 0, 0, 0]]}}'
+Invoke-RestMethod -Method Post -Uri http://127.0.0.1:5001/invocations -ContentType 'application/json' -Body '{"dataframe_split": {"columns": ["Air_temperature_K", "Process_temperature_K", "Rotational_speed_rpm", "Torque_Nm", "Tool_wear_min", "Type_Encoded"], "data": [[315.0, 308.8, 5500, 90.0, 10, 1]]}}'
 
 ```
 
@@ -56,9 +56,18 @@ dan hasilnya seharusnya jadi:
 ```
 predictions
 -----------
-{0}
+{1}
 
 ```
+Catatan Tambahan untuk Payload:
+
+Type_Encoded harus sesuai dengan pemetaan LabelEncoder 
+| Output | Meaning |
+|:------:|:---------|
+| `0` | High (**H**) |
+| `1` | Low (**L**) |
+| `2` | Medium (**M**) |
+
 ---
 ## 🧪 Prediction Output
 
